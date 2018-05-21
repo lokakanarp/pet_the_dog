@@ -4,7 +4,10 @@ export default function Header (props) {
 	return (
 		<div className="header">
 			<div className="logo">
-				<h1>Pet the dog</h1>
+				<img src={window.location.origin + '/img/logo_dog_2.gif'} alt="logo"/>
+			</div>
+			<div className="logoImg">
+				<img src={window.location.origin + '/img/dog_small.gif'} alt="dog"/>
 			</div>
 			<div className="welcomeMessage">
 				<h3>Your dog's name: {props.dogName}</h3>

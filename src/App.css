@@ -1,9 +1,17 @@
 .header {
 	display: flex;
 	justify-content: space-between;
-	background-color: lightblue;
-	padding: 3% 5% 3% 5%;
+	background-color: #fffaf4;
+	padding: 2% 5% 2% 5%;
+	//height: 150px
 }
+.logo {
+	height: 15vh;
+}
+.logo img {
+	min-height: 100%;
+}
+
 p {
 	font-size: 0.8em;
 }
@@ -35,7 +43,7 @@ img {
 	display: flex;
 	flex-direction: column;
 	flex: 0 1 auto;
-	background-color: lightblue;
+	background-color: #fffaf4;
 	width: 15%;
 	text-align: center;
 }
@@ -51,7 +59,7 @@ img {
 	justify-content: center;
 }
 .sidebarImage {
-	width: 30%;
+	width: 40%;
 	flex: 0 1 auto;
 	max-width: 100px;
 	margin: 0 auto;

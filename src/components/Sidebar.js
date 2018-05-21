@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Ball from './Ball'
+import Ball from './Ball';
+import Food from './Food';
+
 
 
 class Sidebar extends Component {
@@ -12,14 +14,16 @@ class Sidebar extends Component {
 			<Ball 
 				ballPrice={this.props.ballPrice} 
 				handleBall={this.props.handleBall}
-				ballVisible={this.props.ballVisible}/>
-			<p>food <br />
-				<span className="sidebar_points">150 points.</span>
-			</p>
-			<p>treats <br />
-				<span className="sidebar_points">500 points.</span>
-			</p>
-			<p>stick <br />
+				ballVisible={this.props.ballVisible} />
+			<Food 
+				foodPrice={this.props.foodPrice} 
+				handleFood={this.props.handleFood}
+				foodVisible={this.props.foodVisible} />
+			<Stick
+				stickPrice={this.props.stickPrice} 
+				handleStick={this.props.handleStick}
+				stickVisible={this.props.stickVisible} />
+			<p>treat <br />
 				<span className="sidebar_points">800 points.</span>
 			</p>
 			<p>bone <br />

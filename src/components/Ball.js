@@ -14,7 +14,7 @@ class Ball extends Component {
 			   ); 
 		   }
 		  
-		  return (<div className="itemOriginal" onClick={this.props.handleBall}>		  <p>Ball <br />
+		  return (<div className="itemOriginal" onClick={this.props.handleBall}>		  <p>Fun ball <br />
 				<span className="sidebar_points">Price: 20 points.<br />
 					  +1 points per click.</span></p>
 			</div>); 	

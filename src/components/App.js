@@ -13,7 +13,11 @@ class App extends Component {
 	  score: 0,
 	  click: 1,
 	  ballPrice: 20,
-	  ballVisible: false
+	  ballVisible: false,
+	  foodPrice: 100,
+	  foodVisible: false,
+	  stickPrice: 200,
+	  stickVisible: false
 	  
 	  
   }
@@ -24,7 +28,35 @@ class App extends Component {
 			score: this.state.score - this.state.ballPrice,
 			click: this.state.click + 1,
 			ballPrice: Math.round(this.state.ballPrice * 1.1) 
-		   });
+		   })
+		} else {
+			alert("You need more points to buy this item.")
+		}
+	}
+	
+	handleFood = () => {
+		if (this.state.score - this.state.foodPrice >= 0) {
+		this.setState({ 
+			foodVisible: true,
+			score: this.state.score - this.state.foodPrice,
+			click: this.state.click + 3,
+			ballPrice: Math.round(this.state.ballPrice * 1.5) 
+		   })
+		} else {
+			alert("You need more points to buy this item.")
+		}
+	}
+	
+	handleStick = () => {
+		if (this.state.score - this.state.stickPrice >= 0) {
+		this.setState({ 
+			stickVisible: true,
+			score: this.state.score - this.state.stickPrice,
+			click: this.state.click + 4,
+			ballPrice: Math.round(this.state.stickPrice * 1.8) 
+		   })
+		} else {
+			alert("You need more points to buy this item.")
 		}
 	}
 	
@@ -34,11 +66,11 @@ class App extends Component {
 	}
 	
 	bonusPoints = () => {
-			if (this.state.score === 100 || this.state.score === 500 ||
-			   this.state.score === 800) {
-			alert("Your dog loves you so much it decided to give you 30 extra points!")
-			this.setState({score: this.state.score + 30});
-			}
+		if (this.state.score === 100 || this.state.score === 500 ||
+		   this.state.score === 800) {
+		alert("Your dog loves you so much it decided to give you 30 extra points!")
+		this.setState({score: this.state.score + 30});
+		}
 	}
 	
 	
@@ -53,7 +85,13 @@ class App extends Component {
 			<Sidebar 
 				ballPrice={this.state.ballPrice} 
 				ballVisible={this.state.ballVisible}
-				handleBall={this.handleBall} />
+				handleBall={this.handleBall}
+				foodPrice={this.state.foodPrice} 
+				foodVisible={this.state.foodVisible}
+				handleFood={this.handleFood}
+				stickPrice={this.state.stickPrice}
+				stickVisible={this.state.stickVisible}
+				handleStick={this.handleStick}/>
 		</div>
 		<Footer />
 	 </div>
