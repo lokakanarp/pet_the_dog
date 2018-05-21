@@ -9,7 +9,10 @@ class Sidebar extends Component {
     return (
 		
      <div className="sidebar">
-			<Ball items={this.props} handleBall={this.props.handleBall}/>
+			<Ball 
+				ballPrice={this.props.ballPrice} 
+				handleBall={this.props.handleBall}
+				ballVisible={this.props.ballVisible}/>
 			<p>food <br />
 				<span className="sidebar_points">150 points.</span>
 			</p>
