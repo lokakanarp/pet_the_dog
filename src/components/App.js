@@ -12,24 +12,18 @@ class App extends Component {
 	  dogName: 'kajsavoff',
 	  score: 0,
 	  click: 1,
-	  items: [
-		  { id: 1,
-		  	name: 'ball',
-		  	img: '/img/bull.png',
-		  	quantity: 0,
-		  	points: 1,
-		  	price: 50 },
-	  ]
 	  
   }
-	
-	
 	handleBall = () => {
-		this.setState({
-			price: Math.round((this.state.items[0].price * 1.1)* 100 / 100), 
-			quantity: this.state.items[0].quantity + 1,
-			click: this.state.click + this.state.items[0].points,
+		let quantity = 1;
+		let points = 1;
+		this.setState({ 
+			click: this.state.click + points
 		   });
+	}
+	
+	handleClick = () => {
+		this.setState({ score: this.state.click });
 	}
 	
 
