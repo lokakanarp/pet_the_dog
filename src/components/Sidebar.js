@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Ball from './Ball';
 import Food from './Food';
+import Stick from './Stick';
 
 
 

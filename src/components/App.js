@@ -17,9 +17,7 @@ class App extends Component {
 	  foodPrice: 100,
 	  foodVisible: false,
 	  stickPrice: 200,
-	  stickVisible: false
-	  
-	  
+	  stickVisible: false  
   }
 	handleBall = () => {
 		if (this.state.score - this.state.ballPrice >= 0) {
@@ -40,7 +38,7 @@ class App extends Component {
 			foodVisible: true,
 			score: this.state.score - this.state.foodPrice,
 			click: this.state.click + 3,
-			ballPrice: Math.round(this.state.ballPrice * 1.5) 
+			foodPrice: Math.round(this.state.foodPrice * 1.5) 
 		   })
 		} else {
 			alert("You need more points to buy this item.")
@@ -53,7 +51,7 @@ class App extends Component {
 			stickVisible: true,
 			score: this.state.score - this.state.stickPrice,
 			click: this.state.click + 4,
-			ballPrice: Math.round(this.state.stickPrice * 1.8) 
+			stickPrice: Math.round(this.state.stickPrice * 1.8) 
 		   })
 		} else {
 			alert("You need more points to buy this item.")
