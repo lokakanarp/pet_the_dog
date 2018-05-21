@@ -10,7 +10,7 @@ export default function Header (props) {
 				<h3>Your dog's name: {props.dogName}</h3>
 			</div>
 			<div className="scoreBoard">
-				<h1>You have {props.score} points of love.</h1>
+				<h3>You have {props.score} points of love.</h3>
 			</div>
 			
 			

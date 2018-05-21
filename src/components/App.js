@@ -23,7 +23,7 @@ class App extends Component {
 	}
 	
 	handleClick = () => {
-		this.setState({ score: this.state.click });
+		this.setState({ score: this.state.score + this.state.click });
 	}
 	
 
