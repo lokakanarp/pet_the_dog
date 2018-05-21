@@ -14,7 +14,7 @@ class Sidebar extends Component {
      <div className="sidebar">
 			<Ball 
 				ballPrice={this.props.ballPrice} 
-				handleBall={this.props.handleBall}
+				handleItem={this.props.handleItem(this.itemPrice, this.itemVisible, this.number, this.percent)}
 				ballVisible={this.props.ballVisible} />
 			<Food 
 				foodPrice={this.props.foodPrice} 

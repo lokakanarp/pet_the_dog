@@ -19,7 +19,21 @@ class App extends Component {
 	  stickPrice: 200,
 	  stickVisible: false  
   }
-	handleBall = () => {
+///Testing
+	handleItem = (itemPrice, itemVisible, number, percent) => {
+		if (this.state.score - this.state.itemPrice >= 0) {
+		this.setState({ 
+			itemVisible: true,
+			score: this.state.score - this.state.itemPrice,
+			click: this.state.click + number,
+			itemPrice: Math.round(this.state.itemPrice * percent) 
+		   })
+		} else {
+			alert("You need more points to buy this item.")
+		}
+	}
+////Testing
+	/*handleBall = () => {
 		if (this.state.score - this.state.ballPrice >= 0) {
 		this.setState({ 
 			ballVisible: true,
@@ -30,7 +44,7 @@ class App extends Component {
 		} else {
 			alert("You need more points to buy this item.")
 		}
-	}
+	}*/
 	
 	handleFood = () => {
 		if (this.state.score - this.state.foodPrice >= 0) {
@@ -83,7 +97,7 @@ class App extends Component {
 			<Sidebar 
 				ballPrice={this.state.ballPrice} 
 				ballVisible={this.state.ballVisible}
-				handleBall={this.handleBall}
+				handleItem={this.handleItem(this.itemPrice, this.itemVisible, this.number, this.percent)}
 				foodPrice={this.state.foodPrice} 
 				foodVisible={this.state.foodVisible}
 				handleFood={this.handleFood}

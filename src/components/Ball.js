@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-//import Sidebar from './Sidebar';
 
 class Ball extends Component {
 	  render() {
 		   if (this.props.ballVisible) {
-			  return (<div className="itemModified" onClick={this.props.handleBall}>
+			  return (<div className="itemModified" onClick={() => this.handleItem(this.props.ballPrice, this.props.ballVisible, 1, 1.1)}>
 					<div className="sidebarImage">
 					   <img src={window.location.origin + '/img/ball.png'} alt="ball" /><br /> 
 					</div>
