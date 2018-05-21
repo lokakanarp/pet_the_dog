@@ -12,14 +12,17 @@ class App extends Component {
 	  dogName: 'kajsavoff',
 	  score: 0,
 	  click: 1,
+	  ballPrice: 20
+	  
 	  
   }
 	handleBall = () => {
-		let quantity = 1;
-		let points = 1;
+		if (this.state.score - this.state.ballPrice >= 0) {
 		this.setState({ 
-			click: this.state.click + points
+			score: this.state.score - this.state.ballPrice,
+			click: this.state.click + 1 
 		   });
+		}
 	}
 	
 	handleClick = () => {
@@ -33,7 +36,7 @@ class App extends Component {
 		<Header dogName={this.state.dogName} score={this.state.score} />
 		<div className="wrapper">
 			<Main handleClick={this.handleClick} />
-			<Sidebar items={this.state.items} handleBall={this.handleBall} />
+			<Sidebar items={this.state} handleBall={this.handleBall} />
 		</div>
 		<Footer />
 	 </div>

@@ -8,7 +8,7 @@ class Ball extends Component {
 				<span className="sidebar_points">Price: {this.props.items[0].price} points.</span></p>
 			</div>);
 		}*/
-		return (<div className="ItemModified">
+		return (<div className="ItemModified" onClick={this.props.handleBall}>
 					<div className="sidebarImage">
 					   <img src={window.location.origin + '/img/ball.png'} alt="ball" /><br />
 					   <p>Price:  points.</p>
