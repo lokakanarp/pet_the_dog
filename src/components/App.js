@@ -30,10 +30,21 @@ class App extends Component {
 	
 	handleClick = () => {
 		this.setState({ score: this.state.score + this.state.click });
+		this.bonusPoints();
 	}
+	
+	bonusPoints = () => {
+			if (this.state.score === 100 || this.state.score === 500 ||
+			   this.state.score === 800) {
+			alert("Your dog loves you so much it decided to give you 30 extra points!")
+			this.setState({score: this.state.score + 30});
+			}
+	}
+	
 	
 
   render() {
+	
     return (
      <div>
 		<Header dogName={this.state.dogName} score={this.state.score} />

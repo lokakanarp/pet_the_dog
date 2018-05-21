@@ -4,17 +4,19 @@ import React, { Component } from 'react';
 class Ball extends Component {
 	  render() {
 		   if (this.props.ballVisible) {
-			  return (<div className="ItemModified" onClick={this.props.handleBall}>
+			  return (<div className="itemModified" onClick={this.props.handleBall}>
 					<div className="sidebarImage">
-					   <img src={window.location.origin + '/img/ball.png'} alt="ball" /><br />
-					   <p>Price: {this.props.ballPrice} points.</p>
+					   <img src={window.location.origin + '/img/ball.png'} alt="ball" /><br /> 
 					</div>
+					  <p>Price: {this.props.ballPrice} points.<br />
+					  +1 points per click.</p>
 				</div>
 			   ); 
 		   }
 		  
-		  return (<div className="ItemOriginal" onClick={this.props.handleBall}>		  <p>Ball <br />
-				<span className="sidebar_points">Price: 20 points.</span></p>
+		  return (<div className="itemOriginal" onClick={this.props.handleBall}>		  <p>Ball <br />
+				<span className="sidebar_points">Price: 20 points.<br />
+					  +1 points per click.</span></p>
 			</div>); 	
 				  }
 }
