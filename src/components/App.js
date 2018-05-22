@@ -4,8 +4,6 @@ import Main from './Main';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
 import Item from './Item';
-import Food from './Food';
-import Stick from './Stick';
 
 import '../App.css';
 
@@ -20,7 +18,9 @@ class App extends Component {
 	  foodPrice: 100,
 	  foodVisible: false,
 	  stickPrice: 200,
-	  stickVisible: false  
+	  stickVisible: false ,
+	  treatsPrice: 450,
+	  treatsVisible: false
   }
 	handleBall = () => {
 		if (this.state.score - this.state.ballPrice >= 0) {
@@ -60,6 +60,18 @@ class App extends Component {
 			alert("You need more points to buy this item.")
 		}
 	}
+	handleTreats = () => {
+		if (this.state.score - this.state.treatsPrice >= 0) {
+		this.setState({ 
+			treatsVisible: true,
+			score: this.state.score - this.state.treatsPrice,
+			click: this.state.click + 5,
+			treatsPrice: Math.round(this.state.treatsPrice * 2) 
+		   })
+		} else {
+			alert("You need more points to buy this item.")
+		}
+	}
 	
 	handleClick = () => {
 		this.setState({ score: this.state.score + this.state.click });
@@ -74,8 +86,6 @@ class App extends Component {
 		}
 	}
 	
-	
-
   render() {
 	
     return (
@@ -84,31 +94,38 @@ class App extends Component {
 		<div className="wrapper">
 			<Main handleClick={this.handleClick} />
 			<Sidebar>
-		{/*ballPrice={this.state.ballPrice} 
-				ballVisible={this.state.ballVisible}
-				handleBall={this.handleBall}
-				foodPrice={this.state.foodPrice} 
-				foodVisible={this.state.foodVisible}
-				handleFood={this.handleFood}
-				stickPrice={this.state.stickPrice}
-				stickVisible={this.state.stickVisible}
-				handleStick={this.handleStick}/>*/}
 				<Item 
 					price={this.state.ballPrice} 
 					handleClick={this.handleBall}
 					visible={this.state.ballVisible}
-					caption={"Fun ball."}
+					caption={"Fun ball"}
 					imgAddress={"/img/ball.png"}
 					alt={"ball"}
 					extraPoints={1} />
-				<Food 
-					foodPrice={this.state.foodPrice} 
-					handleFood={this.handleFood}
-					foodVisible={this.state.foodVisible} />
-				<Stick
-					stickPrice={this.state.stickPrice} 
-					handleStick={this.handleStick}
-					stickVisible={this.state.stickVisible} />
+				<Item 
+					price={this.state.foodPrice} 
+					handleClick={this.handleFood}
+					visible={this.state.foodVisible}
+					caption={"Yummy food"}
+					imgAddress={"/img/food.png"}
+					alt={"dog food"}
+					extraPoints={3} />
+				<Item
+					price={this.state.stickPrice} 
+					handleClick={this.handleStick}
+					visible={this.state.stickVisible}
+					caption={"Cool stick"}
+					imgAddress={"/img/stick.png"}
+					alt={"stick"}
+					extraPoints={4} />
+				<Item
+					price={this.state.treatsPrice} 
+					handleClick={this.handleTreats}
+					visible={this.state.treatsVisible}
+					caption={"Tasty treats"}
+					imgAddress={"/img/treats.png"}
+					alt={"dog treats"}
+					extraPoints={5} />
 			
 			</Sidebar>
 		</div>
