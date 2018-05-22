@@ -3,6 +3,9 @@ import Header from './Header';
 import Main from './Main';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
+import Ball from './Ball';
+import Food from './Food';
+import Stick from './Stick';
 
 import '../App.css';
 
@@ -80,8 +83,8 @@ class App extends Component {
 		<Header dogName={this.state.dogName} score={this.state.score} />
 		<div className="wrapper">
 			<Main handleClick={this.handleClick} />
-			<Sidebar 
-				ballPrice={this.state.ballPrice} 
+			<Sidebar>
+		{/*ballPrice={this.state.ballPrice} 
 				ballVisible={this.state.ballVisible}
 				handleBall={this.handleBall}
 				foodPrice={this.state.foodPrice} 
@@ -89,7 +92,21 @@ class App extends Component {
 				handleFood={this.handleFood}
 				stickPrice={this.state.stickPrice}
 				stickVisible={this.state.stickVisible}
-				handleStick={this.handleStick}/>
+				handleStick={this.handleStick}/>*/}
+				<Ball 
+					ballPrice={this.state.ballPrice} 
+					handleBall={this.handleBall}
+					ballVisible={this.state.ballVisible} />
+				<Food 
+					foodPrice={this.state.foodPrice} 
+					handleFood={this.handleFood}
+					foodVisible={this.state.foodVisible} />
+				<Stick
+					stickPrice={this.state.stickPrice} 
+					handleStick={this.handleStick}
+					stickVisible={this.state.stickVisible} />
+			
+			</Sidebar>
 		</div>
 		<Footer />
 	 </div>
