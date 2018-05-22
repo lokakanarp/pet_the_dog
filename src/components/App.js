@@ -3,7 +3,7 @@ import Header from './Header';
 import Main from './Main';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
-import Ball from './Ball';
+import Item from './Item';
 import Food from './Food';
 import Stick from './Stick';
 
@@ -93,10 +93,14 @@ class App extends Component {
 				stickPrice={this.state.stickPrice}
 				stickVisible={this.state.stickVisible}
 				handleStick={this.handleStick}/>*/}
-				<Ball 
-					ballPrice={this.state.ballPrice} 
-					handleBall={this.handleBall}
-					ballVisible={this.state.ballVisible} />
+				<Item 
+					price={this.state.ballPrice} 
+					handleClick={this.handleBall}
+					visible={this.state.ballVisible}
+					caption={"Fun ball."}
+					imgAddress={"/img/ball.png"}
+					alt={"ball"}
+					extraPoints={1} />
 				<Food 
 					foodPrice={this.state.foodPrice} 
 					handleFood={this.handleFood}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+//import Sidebar from './Sidebar';
 
 class Ball extends Component {
 	  render() {
