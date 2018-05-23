@@ -1,17 +1,27 @@
+body {
+	background-color: #fffaf4;
+} 
 .header {
 	display: flex;
 	justify-content: space-between;
 	background-color: #fffaf4;
 	padding: 2% 5% 2% 5%;
-	//height: 150px
+	color: saddlebrown;
+}
+.logoDiv {
+	display: flex;
+	height: 15vh;
 }
 .logo {
-	height: 15vh;
+	//height: 15vh;
+	max-height: 100%;
 }
 .logo img {
 	min-height: 100%;
 }
-
+.logoImg {
+	padding: 5% 0 7% 4%;
+}
 p {
 	font-size: 0.8em;
 }
@@ -26,14 +36,17 @@ h1 {
 .main {
 	display: flex;
 	flex: 0 1 auto;
-	background-color: darkseagreen;
-	width: 85%;
-	justify-content: center;	
+	background-color: #c8e8bb;
+	width: 83%;
+	justify-content: center;
+	border-radius: 15px;
+	margin: 2% 2% 2% 3%;
+	box-sizing: border-box;
 }
 .image {
-	height: 375px;
+	height: 420px;
 	margin: 0 auto;
-	padding: 5% 0 5% 0;
+	padding: 2% 0 5% 0;
 }
 img {
 	max-height: 100%;
@@ -44,19 +57,21 @@ img {
 	flex-direction: column;
 	flex: 0 1 auto;
 	background-color: #fffaf4;
-	width: 15%;
+	width: 17%;
 	text-align: center;
+	justify-content: space-between;
+	border: 3px solid #ff9fd6;
+	padding-top: 2%;
+	border-radius: 15px;
+	box-sizing: border-box;
+	margin: 2% 2% 2% 0%;
 }
-.itemOriginal {
-	flex: 0 1 auto;
-	display: flex;
-	justify-content: center;
-}
-.itemModified {
+.item {
 	flex: 0 1 auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	color: saddlebrown;
 }
 .sidebarImage {
 	width: 40%;
@@ -65,10 +80,12 @@ img {
 	margin: 0 auto;
 }
 .footer {
-	background-color: black;
+	background-color: #5d2e16;
+	margin: 0;
+	padding: 2%;
+}
+.footer p {
+	color: #fffaf4;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+

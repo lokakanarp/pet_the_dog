@@ -8,7 +8,7 @@ class Main extends Component {
     return (
      <div className="main">
 		<div className="image" onClick={this.props.handleClick}>
-			<img src={window.location.origin + '/img/dog1.png'} alt="dog"/>
+			<img src={window.location.origin + '/img/dog_2.gif'} alt="dog"/>
 		</div>
 	 </div>
     );
