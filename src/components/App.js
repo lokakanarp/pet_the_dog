@@ -4,6 +4,7 @@ import Main from './Main';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
 import Item from './Item';
+import Bone from './Bone';
 
 import '../App.css';
 
@@ -20,7 +21,9 @@ class App extends Component {
 	  stickPrice: 200,
 	  stickVisible: false ,
 	  treatsPrice: 450,
-	  treatsVisible: false
+	  treatsVisible: false,
+	  bonePrice: 1000,
+	  boneVisible: false
   }
 	handleBall = () => {
 		if (this.state.score - this.state.ballPrice >= 0) {
@@ -67,6 +70,18 @@ class App extends Component {
 			score: this.state.score - this.state.treatsPrice,
 			click: this.state.click + 5,
 			treatsPrice: Math.round(this.state.treatsPrice * 2) 
+		   })
+		} else {
+			alert("You need more points to buy this item.")
+		}
+	}
+	handleBone = () => {
+		if (this.state.score - this.state.bonePrice >= 0) {
+		this.setState({ 
+			boneVisible: true,
+			score: this.state.score - this.state.bonePrice,
+			click: this.state.click + 5,
+			bonePrice: Math.round(this.state.treatsPrice * 2) 
 		   })
 		} else {
 			alert("You need more points to buy this item.")
@@ -126,6 +141,10 @@ class App extends Component {
 					imgAddress={"/img/treats.png"}
 					alt={"dog treats"}
 					extraPoints={5} />
+				<Bone 
+					price={this.state.bonePrice} 
+					handleClick={this.handleBone}
+					visible={this.state.boneVisible} />
 			
 			</Sidebar>
 		</div>

@@ -1,18 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-
-
-class Main extends Component {
-
-  render() {
+export default function Main (props){
     return (
      <div className="main">
-		<div className="image" onClick={this.props.handleClick}>
+		<div className="image" onClick={ props.handleClick }>
 			<img src={window.location.origin + '/img/dog_2.gif'} alt="dog"/>
 		</div>
 	 </div>
     );
-  }
 }
 
-export default Main;
