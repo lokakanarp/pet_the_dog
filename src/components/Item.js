@@ -15,5 +15,6 @@ export default function Item (props) {
 		  return (<div className="item" onClick={props.handleClick}>		  <p> {props.caption} <br />
 				<span className="sidebar_points">Price: { props.price } points.<br />
 					  +{ props.extraPoints } points per click.</span></p>
-		  </div>); 	
+		  </div>); 
+	
 }
