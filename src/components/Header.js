@@ -13,10 +13,13 @@ export default function Header (props) {
 				</div>
 			</div>
 			<div className="scoreBoard">
-				<h3>You have {props.score} <Points number={props.score}/> of love.</h3>
+				<h2>You have {props.score} <Points number={props.score}/> of love.</h2>
+				<h4>{props.click} <Points number={props.click}/> per click.</h4>
 			</div>
 			<div className="welcomeMessage">
-				<h3>Your dog's name: {props.dogName}</h3>
+				<h3>Your dog's name is {props.dogName}.<br />
+				Your dog is {props.dogAge} years old.<br />
+				What a dog!</h3>
 			</div>
 		</div>
 	);

@@ -28,7 +28,6 @@ class Login extends Component {
 
 	return (
 		<form className="form" onSubmit={this.handleSubmit}>
-			<div>
 				<label htmlFor="dogName">Enter your dog's name:</label><br />
 				<input 
 					className="inputField"
@@ -39,8 +38,6 @@ class Login extends Component {
 					onChange={this.handleDogName}
 					value={this.state.dogName}
 				/>
-			</div>
-			<div>
 				<label htmlFor="dogAge">Enter your dog's age:</label><br />
 				<input 
 					className="inputField"
@@ -51,9 +48,8 @@ class Login extends Component {
 					onChange={this.handleDogAge}
 					value={this.state.dogAge}
 				/>
-			</div>
 			<p> {this.state.message} </p>
-			<button type="submit" className="btn btn-primary">Submit</button>
+			<button type="submit" className="submitButton">Submit</button>
 		</form>
 		);
 	}

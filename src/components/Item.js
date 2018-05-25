@@ -10,13 +10,13 @@ export default function Item (props) {
 					  alt={props.alt} /><br /> 
 					</div>
 					  <p>Price: {props.price} points.<br />
-					  +{props.extraPoints} <Points number={props.extraPoints}/> per click.</p>
+					  +{props.extraPoints} <Points number={props.extraPoints}/> per <ClickOrSecond caption={props.caption} />.</p>
 				</div>
 			   ); 
 		   }
 		  return (<div className="item" onClick={props.handleClick}>		  <p> {props.caption} <br />
-				<span className="sidebar_points">Price: {props.price} points.<br />
-					  +{props.extraPoints} <Points number={props.extraPoints}/> per <ClickOrSecond caption={props.caption} />.</span></p>
+				Price: {props.price} points.<br />
+					  +{props.extraPoints} <Points number={props.extraPoints}/> per <ClickOrSecond caption={props.caption} />.</p>
 		  </div>); 
 	
 }

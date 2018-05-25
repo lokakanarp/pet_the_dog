@@ -120,7 +120,11 @@ class App extends Component {
 	if(this.state.loggedIn) {
     return (
 		 <div>
-			<Header dogName={this.state.dogName} score={this.state.score} />
+			<Header 
+				dogName={this.state.dogName} 
+				dogAge={this.state.dogAge}
+				score={this.state.score}
+				click={this.state.click} />
 			<div className="wrapper">
 				<Main handleClick={this.handleClick} />
 				<Sidebar>
@@ -172,7 +176,13 @@ class App extends Component {
 	  }
 	return (
 		<div className="formWrapper">
+			<div className="logoLogin">
+				<img src={window.location.origin + '/img/logo_dog_2.gif'} alt="logo"/>
+			</div>
 			<Login handleLogin={this.handleLogin} />
+			<div className="logoImgLogin">
+				<img src={window.location.origin + '/img/dog_small.gif'} alt="dog"/>
+			</div>
 		</div>
 	);
 	}
