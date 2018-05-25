@@ -13,8 +13,9 @@ export default function Bone (props) {
 				</div>
 			   ); 
 		   }
-		  return (<div className="item" onClick={props.handleClick}>		  <p> Beautiful bone <br />
-				<span className="sidebar_points">Price: { props.price } points.<br /> +2 points per click.</span></p>
+		  return (<div className="item" onClick={props.handleClick}>		  
+				  <p>Beautiful bone<br />
+				  <span className="sidebar_points">Price: { props.price } points.<br /> +1 point per second.</span></p>
 		  </div>); 
 	
 }
