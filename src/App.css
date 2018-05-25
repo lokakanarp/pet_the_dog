@@ -1,6 +1,21 @@
 body {
 	background-color: #fffaf4;
 } 
+
+.form{
+	margin: 0px auto;
+    width: 55%;
+	text-align: center;
+	line-height: 330%;
+} 
+.inputField{
+	width: 50%;
+	border-radius: 7px;
+	padding: 2%;
+	font-size: 1em;
+	box-shadow: none;
+	border: 1px solid gray;
+}
 .header {
 	display: flex;
 	justify-content: space-between;
@@ -45,7 +60,7 @@ h1 {
 .image {
 	height: 450px;
 	margin: 0 auto;
-	padding: 2% 0 5% 0;
+	padding: 7% 0 7% 0;
 }
 .image:hover {
 	cursor: pointer;

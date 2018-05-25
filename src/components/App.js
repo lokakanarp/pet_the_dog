@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
+import Login from './Login';
 import Header from './Header';
 import Main from './Main';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
 import Item from './Item';
-import Bone from './Bone';
+
 import '../App.css';
 
 class App extends Component {
 	
   state = {
+	  loggedIn: false,
 	  dogName: 'kajsavoff',
 	  score: 0,
 	  click: 1,
@@ -21,9 +23,14 @@ class App extends Component {
 	  stickVisible: false ,
 	  treatsPrice: 450,
 	  treatsVisible: false,
-	  bonePrice: 15,
+	  bonePrice: 1000,
 	  boneVisible: false
   }
+
+	handleLogin = (dogName, dogAge) => {
+    	this.setState({ loggedIn: true, dogName: dogName, dogAge: dogAge });
+  	}
+	
 	handleBall = () => {
 		if (this.state.score - this.state.ballPrice >= 0) {
 		this.setState({ 
@@ -109,61 +116,66 @@ class App extends Component {
 	}
 	
   render() {
-	
+	  
+	if(this.state.loggedIn) {
     return (
-     <div>
-		<Header dogName={this.state.dogName} score={this.state.score} />
-		<div className="wrapper">
-			<Main handleClick={this.handleClick} />
-			<Sidebar>
-				<Item 
-					price={this.state.ballPrice} 
-					handleClick={this.handleBall}
-					visible={this.state.ballVisible}
-					caption="Fun ball"
-					imgAddress="/img/ball.png"
-					alt="Ball"
-					extraPoints={1} />
-				<Item 
-					price={this.state.foodPrice} 
-					handleClick={this.handleFood}
-					visible={this.state.foodVisible}
-					caption="Yummy food"
-					imgAddress="/img/food.png"
-					alt="Dog food"
-					extraPoints={3} />
-				<Item
-					price={this.state.stickPrice} 
-					handleClick={this.handleStick}
-					visible={this.state.stickVisible}
-					caption="Cool stick"
-					imgAddress="/img/stick.png"
-					alt="Stick"
-					extraPoints={4} />
-				<Item
-					price={this.state.treatsPrice} 
-					handleClick={this.handleTreats}
-					visible={this.state.treatsVisible}
-					caption="Tasty treats"
-					imgAddress="/img/treats.png"
-					alt="Dog treats"
-					extraPoints={5} />
-				<Bone 
-					price={this.state.bonePrice} 
-					handleClick={this.handleBone}
-					visible={this.state.boneVisible}
-					caption="Beautiful bone"
-					imgAdress="/img/bone1.png"
-					alt="Bone"
-					extraPoints={1}/>
-		
-			
-			</Sidebar>
+		 <div>
+			<Header dogName={this.state.dogName} score={this.state.score} />
+			<div className="wrapper">
+				<Main handleClick={this.handleClick} />
+				<Sidebar>
+					<Item 
+						price={this.state.ballPrice} 
+						handleClick={this.handleBall}
+						visible={this.state.ballVisible}
+						caption="Fun ball"
+						imgAddress="/img/ball.png"
+						alt="Ball"
+						extraPoints={1} />
+					<Item 
+						price={this.state.foodPrice} 
+						handleClick={this.handleFood}
+						visible={this.state.foodVisible}
+						caption="Yummy food"
+						imgAddress="/img/food.png"
+						alt="Dog food"
+						extraPoints={3} />
+					<Item
+						price={this.state.stickPrice} 
+						handleClick={this.handleStick}
+						visible={this.state.stickVisible}
+						caption="Cool stick"
+						imgAddress="/img/stick.png"
+						alt="Stick"
+						extraPoints={4} />
+					<Item
+						price={this.state.treatsPrice} 
+						handleClick={this.handleTreats}
+						visible={this.state.treatsVisible}
+						caption="Tasty treats"
+						imgAddress="/img/treats.png"
+						alt="Dog treats"
+						extraPoints={5} />
+					<Item
+						price={this.state.bonePrice} 
+						handleClick={this.handleBone}
+						visible={this.state.boneVisible}
+						caption="Beautiful bone"
+						imgAddress="/img/bone1.png"
+						alt="Bone"
+						extraPoints={1} />
+				</Sidebar>
+			</div>
+			<Footer />
+		 </div>
+		);
+	  }
+	return (
+		<div className="formWrapper">
+			<Login handleLogin={this.handleLogin} />
 		</div>
-		<Footer />
-	 </div>
-    );
-  }
+	);
+	}
 }
 
 export default App;
