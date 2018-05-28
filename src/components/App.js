@@ -29,8 +29,7 @@ class App extends Component {
 	  treatsPrice: 450,
 	  treatsVisible: false,
 	  bonePrice: 1000,
-	  boneVisible: false,
-	  savedDogs: []
+	  boneVisible: false
   }
 
 	handleLogin = (dogName, dogAge) => {
@@ -123,23 +122,18 @@ class App extends Component {
 	
 	
 	saveDog = () => {
-		//savedDogs = [];
-		if(!localStorage.getItem('savedDogs')) {
-			localStorage.setItem('savedDogs', JSON.stringify(this.state.savedDogs));
+		let newDogs = JSON.parse(localStorage.getItem('savedDogs')) || [];
+		if (newDogs.find((dog) => dog.name === this.state.dogName)) {
+			newDogs = newDogs.filter((dog) => dog.name !== this.state.dogName);
+			newDogs = newDogs.concat([{name: this.state.dogName, score: this.state.score}]);
 		}
-		let newDog = JSON.parse(localStorage.getItem('savedDogs'));
-		newDog.push(this.state.dogName);
-		this.setState({savedDogs: newDog})
-	
-		//this.setState({savedDogs: JSON.parse(localStorage.getItem('savedDogs'))});
-		localStorage.setItem('savedDogs', JSON.stringify(this.state.savedDogs));
-	}
-	/*saveDog = () => {
-		const list = [...this.state.savedDogs];
-		list.push(this.state.dogName)
+		else {
+			newDogs = newDogs.concat([{name: this.state.dogName, score: this.state.score}]);	
+		}
+		localStorage.setItem('savedDogs', JSON.stringify(newDogs));			
 		
-		localStorage.setItem('savedDogs', JSON.stringify({list}))
-	}*/
+	}
+
 	
   render() {
 	  

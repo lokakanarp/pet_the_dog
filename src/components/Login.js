@@ -6,13 +6,9 @@ class Login extends Component {
 		dogAge: '',
 		message: '',
 		}
-
-	handleDogName = (event) => {
-		this.setState({ dogName: event.target.value });
-	}
 	
-	handleDogAge = (event) => {
-		this.setState({ dogAge: event.target.value });
+	handleChange = (event) => {
+		this.setState({ [event.target.name]: event.target.value });
 	}
 
 	handleSubmit = (event) => {
@@ -34,7 +30,7 @@ class Login extends Component {
 						name="dogName"
 						id="dogName"
 						placeholder="For exemple: Caro."
-						onChange={this.handleDogName}
+						onChange={this.handleChange}
 						value={this.state.dogName}
 					/>
 					<label htmlFor="dogAge">Enter your dog's age:</label><br />
@@ -44,7 +40,7 @@ class Login extends Component {
 						id="dogAge"
 						name="dogAge"
 						placeholder="For exemple: five."
-						onChange={this.handleDogAge}
+						onChange={this.handleChange}
 						value={this.state.dogAge}
 					/>
 				<p> {this.state.message} </p>
