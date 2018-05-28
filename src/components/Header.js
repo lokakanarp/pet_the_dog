@@ -1,15 +1,17 @@
 import React from 'react';
 import Points from './Points';
+import logo_dog_2 from '../images/logo_dog_2.gif';
+import dog_small from '../images/dog_small.gif';
 
 export default function Header (props) {
 	return (
 		<div className="header">
 			<div className="logoDiv">
 				<div className="logo">
-					<img src={window.location.origin + '/img/logo_dog_2.gif'} alt="logo"/>
+					<img src={logo_dog_2} alt="logo"/>
 				</div>
 				<div className="logoImg">
-					<img src={window.location.origin + '/img/dog_small.gif'} alt="dog"/>
+					<img src={dog_small} alt="dog"/>
 				</div>
 			</div>
 			<div className="scoreBoard">

@@ -4,10 +4,11 @@ body {
 .formWrapper {
 	width: 35%;
 	margin: 0 auto;
+	padding-bottom: 5%;
 }
 .logoLogin {
 	width: 55%;
-	margin: 15% 0 0 3%;
+	margin: 7% 0 0 3%;
 }
 .logoImgLogin {
 	text-align: center;
@@ -46,7 +47,7 @@ body {
 	display: flex;
 	justify-content: space-between;
 	background-color: #fffaf4;
-	padding: 2% 5% 0 5%;
+	padding: 2% 3% 0 3%;
 	color: #5c3927;
 }
 .logoDiv {
@@ -61,9 +62,13 @@ body {
 .logoImg {
 	padding: 5% 0 7% 4%;
 }
+.scoreBoard {
+	padding-top: 8%;
+}
 .welcomeMessage {
 	line-height: 165%;
 	text-align: right;
+	padding-top: 8%;
 }
 p {
 	font-size: 1em;
@@ -89,7 +94,7 @@ h1 {
 .image {
 	height: 600px;
 	margin: 0 auto;
-	padding: 7% 0 7% 0;
+	padding: 2% 0 7% 0;
 }
 .image:hover {
 	cursor: pointer;
@@ -131,7 +136,7 @@ img {
 .footer {
 	background-color: #5c3927;
 	margin: 0;
-	padding: 2%;
+	padding: 2% 3% 2% 3%;
 }
 .footer p {
 	color: #fffaf4;

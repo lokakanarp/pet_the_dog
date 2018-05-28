@@ -5,6 +5,13 @@ import Main from './Main';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
 import Item from './Item';
+import ball from '../images/ball.png';
+import bone from '../images/bone1.png';
+import food from '../images/food.png';
+import stick from '../images/stick.png';
+import treats from '../images/treats.png';
+import logo_dog_2 from '../images/logo_dog_2.gif';
+import dog_small from '../images/dog_small.gif';
 
 import '../App.css';
 
@@ -108,7 +115,7 @@ class App extends Component {
 	}
 	
 	bonusPoints = () => {
-		if (this.state.score === 100 || this.state.score === 500 ||
+		if (this.state.score === 120 || this.state.score === 500 ||
 		   this.state.score === 800) {
 		alert("Your dog loves you so much it decided to give you 30 extra points!")
 		this.setState({score: this.state.score + 30});
@@ -133,7 +140,7 @@ class App extends Component {
 						handleClick={this.handleBall}
 						visible={this.state.ballVisible}
 						caption="Fun ball"
-						imgAddress="/img/ball.png"
+						src={ball}
 						alt="Ball"
 						extraPoints={1} />
 					<Item 
@@ -141,7 +148,7 @@ class App extends Component {
 						handleClick={this.handleFood}
 						visible={this.state.foodVisible}
 						caption="Yummy food"
-						imgAddress="/img/food.png"
+						src={food}
 						alt="Dog food"
 						extraPoints={3} />
 					<Item
@@ -149,7 +156,7 @@ class App extends Component {
 						handleClick={this.handleStick}
 						visible={this.state.stickVisible}
 						caption="Cool stick"
-						imgAddress="/img/stick.png"
+						src={stick}
 						alt="Stick"
 						extraPoints={4} />
 					<Item
@@ -157,7 +164,7 @@ class App extends Component {
 						handleClick={this.handleTreats}
 						visible={this.state.treatsVisible}
 						caption="Tasty treats"
-						imgAddress="/img/treats.png"
+						src={treats}
 						alt="Dog treats"
 						extraPoints={5} />
 					<Item
@@ -165,7 +172,7 @@ class App extends Component {
 						handleClick={this.handleBone}
 						visible={this.state.boneVisible}
 						caption="Beautiful bone"
-						imgAddress="/img/bone1.png"
+						src={bone}
 						alt="Bone"
 						extraPoints={1} />
 				</Sidebar>
@@ -177,11 +184,11 @@ class App extends Component {
 	return (
 		<div className="formWrapper">
 			<div className="logoLogin">
-				<img src={window.location.origin + '/img/logo_dog_2.gif'} alt="logo"/>
+				<img src={logo_dog_2} alt="logo"/>
 			</div>
 			<Login handleLogin={this.handleLogin} />
 			<div className="logoImgLogin">
-				<img src={window.location.origin + '/img/dog_small.gif'} alt="dog"/>
+				<img src={dog_small} alt="dog"/>
 			</div>
 		</div>
 	);
