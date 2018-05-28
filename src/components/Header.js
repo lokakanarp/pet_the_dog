@@ -23,6 +23,7 @@ export default function Header (props) {
 				<h3>Your dog's name is {props.dogName}.<br />
 				Your dog is {props.dogAge} <Year dogAge={props.dogAge}/> old.<br />
 				What a dog!</h3>
+				<button className="saveDogButton" id="saveDogButton" onClick={props.saveDog}>Save dog</button>
 			</div>
 		</div>
 	);

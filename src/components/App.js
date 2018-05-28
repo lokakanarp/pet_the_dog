@@ -29,7 +29,8 @@ class App extends Component {
 	  treatsPrice: 450,
 	  treatsVisible: false,
 	  bonePrice: 1000,
-	  boneVisible: false
+	  boneVisible: false,
+	  savedDogs: []
   }
 
 	handleLogin = (dogName, dogAge) => {
@@ -120,6 +121,26 @@ class App extends Component {
 		}
 	}
 	
+	
+	saveDog = () => {
+		
+		if(!localStorage.getItem('savedDogs')) {
+			localStorage.setItem('savedDogs', JSON.stringify(this.state.savedDogs));
+		}
+		this.setState({savedDogs: JSON.parse(localStorage.getItem('savedDogs'))});
+		console.log(this.state.savedDogs)
+		let newDogs = [...this.state.savedDogs];
+		newDogs.push(this.state.dogName);
+		this.setState({savedDogs: newDogs})
+		localStorage.setItem('savedDogs', JSON.stringify(this.state.savedDogs));
+	}
+	/*saveDog = () => {
+		const list = [...this.state.savedDogs];
+		list.push(this.state.dogName)
+		
+		localStorage.setItem('savedDogs', JSON.stringify({list}))
+	}*/
+	
   render() {
 	  
 	if(this.state.loggedIn) {
@@ -129,7 +150,8 @@ class App extends Component {
 				dogName={this.state.dogName} 
 				dogAge={this.state.dogAge}
 				score={this.state.score}
-				click={this.state.click} />
+				click={this.state.click}
+				saveDog={this.saveDog} />
 			<div className="wrapper">
 				<Main handleClick={this.handleClick} />
 				<Sidebar>
