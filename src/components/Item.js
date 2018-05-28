@@ -1,6 +1,6 @@
 import React from 'react';
-import Points from './Points';
-import ClickOrSecond from './ClickOrSecond';
+import Points from './words/Points';
+import ClickOrSecond from './words/ClickOrSecond';
 
 
 export default function Item (props) {
@@ -16,9 +16,10 @@ export default function Item (props) {
 			</div>
 		   ); 
 	   }
-	  return (<div className="item" onClick={props.handleClick}>		  <p> {props.caption} <br />
-			Price: {props.price} points.<br />
+	  return (<div className="item" onClick={props.handleClick}>		  
+				  <p> {props.caption} <br />
+				  Price: {props.price} points.<br />
 				  +{props.extraPoints} <Points number={props.extraPoints}/> per <ClickOrSecond caption={props.caption} />.</p>
-	  </div>); 
+		      </div>); 
 	
 }
