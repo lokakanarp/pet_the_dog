@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Login from './Login';
+import Startpage from './Startpage';
 import Header from './Header';
 import Main from './Main';
 import Sidebar from './Sidebar';
@@ -10,8 +10,6 @@ import bone from '../images/bone1.png';
 import food from '../images/food.png';
 import stick from '../images/stick.png';
 import treats from '../images/treats.png';
-import logo_dog_2 from '../images/logo_dog_2.gif';
-import dog_small from '../images/dog_small.gif';
 
 import '../App.css';
 
@@ -182,15 +180,7 @@ class App extends Component {
 		);
 	  }
 	return (
-		<div className="formWrapper">
-			<div className="logoLogin">
-				<img src={logo_dog_2} alt="logo"/>
-			</div>
-			<Login handleLogin={this.handleLogin} />
-			<div className="logoImgLogin">
-				<img src={dog_small} alt="dog"/>
-			</div>
-		</div>
+		<Startpage handleLogin={this.handleLogin}/>
 	);
 	}
 }
