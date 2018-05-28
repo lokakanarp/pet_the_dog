@@ -123,15 +123,15 @@ class App extends Component {
 	
 	
 	saveDog = () => {
-		
+		//savedDogs = [];
 		if(!localStorage.getItem('savedDogs')) {
 			localStorage.setItem('savedDogs', JSON.stringify(this.state.savedDogs));
 		}
-		this.setState({savedDogs: JSON.parse(localStorage.getItem('savedDogs'))});
-		console.log(this.state.savedDogs)
-		let newDogs = [...this.state.savedDogs];
-		newDogs.push(this.state.dogName);
-		this.setState({savedDogs: newDogs})
+		let newDog = JSON.parse(localStorage.getItem('savedDogs'));
+		newDog.push(this.state.dogName);
+		this.setState({savedDogs: newDog})
+	
+		//this.setState({savedDogs: JSON.parse(localStorage.getItem('savedDogs'))});
 		localStorage.setItem('savedDogs', JSON.stringify(this.state.savedDogs));
 	}
 	/*saveDog = () => {
