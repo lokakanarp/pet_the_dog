@@ -4,7 +4,9 @@ import Year from './words/Year';
 import logo_dog_2 from '../images/logo_dog_2.gif';
 import dog_small from '../images/dog_small.gif';
 
+
 export default function Header (props) {
+	
 	return (
 		<div className="header">
 			<div className="logoDiv">
@@ -19,7 +21,7 @@ export default function Header (props) {
 				<h2>You have {props.score} <Points score={props.score}/> of love.</h2>
 				<h4>{props.click} <Points score={props.click}/> per click.</h4>
 			</div>
-			<div className="welcomeMessage">
+			<div className="profile">
 				<h3>Your dog's name is {props.dogName}.<br />
 				Your dog is {props.dogAge} <Year dogAge={props.dogAge}/> old.<br />
 				What a dog!</h3>

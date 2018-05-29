@@ -4,6 +4,7 @@ import Header from './Header';
 import Main from './Main';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
+import SavedDogs from './SavedDogs';
 import Item from './Item';
 import ball from '../images/ball.png';
 import bone from '../images/bone1.png';
@@ -17,15 +18,17 @@ class App extends Component {
 	
   state = {
 	  loggedIn: false,
-	  dogName: 'kajsavoff',
+	  dogName: '',
 	  score: 0,
 	  click: 1,
+	  toggle: false,
 	  ballPrice: 20,
 	  foodPrice: 100,
 	  stickPrice: 200,
 	  treatsPrice: 450,
 	  bonePrice: 1000,
   }
+
 
 	handleLogin = (dogName, dogAge) => {
     	this.setState({ loggedIn: true, dogName: dogName, dogAge: dogAge });
@@ -46,7 +49,6 @@ class App extends Component {
 	handleBall = () => {
 		if (this.state.score - this.state.ballPrice >= 0) {
 		this.setState({ 
-			//ballVisible: true,
 			score: this.state.score - this.state.ballPrice,
 			click: this.state.click + 1,
 			ballPrice: Math.round(this.state.ballPrice * 1.1) 
@@ -59,7 +61,6 @@ class App extends Component {
 	handleFood = () => {
 		if (this.state.score - this.state.foodPrice >= 0) {
 		this.setState({ 
-			//foodVisible: true,
 			score: this.state.score - this.state.foodPrice,
 			click: this.state.click + 3,
 			foodPrice: Math.round(this.state.foodPrice * 1.5) 
@@ -72,7 +73,6 @@ class App extends Component {
 	handleStick = () => {
 		if (this.state.score - this.state.stickPrice >= 0) {
 		this.setState({ 
-			//stickVisible: true,
 			score: this.state.score - this.state.stickPrice,
 			click: this.state.click + 4,
 			stickPrice: Math.round(this.state.stickPrice * 1.8) 
@@ -84,7 +84,6 @@ class App extends Component {
 	handleTreats = () => {
 		if (this.state.score - this.state.treatsPrice >= 0) {
 		this.setState({ 
-			//treatsVisible: true,
 			score: this.state.score - this.state.treatsPrice,
 			click: this.state.click + 5,
 			treatsPrice: Math.round(this.state.treatsPrice * 2) 
@@ -97,7 +96,6 @@ class App extends Component {
 		if (this.state.score - this.state.bonePrice >= 0) {
 		this.handleBoneScore();
 		this.setState({ 
-			//boneVisible: true,
 			score: this.state.score - this.state.bonePrice,
 			bonePrice: Math.round(this.state.bonePrice * 2.5) 
 		   })
@@ -127,21 +125,19 @@ class App extends Component {
 		}
 	}
 	
-	
 	saveDog = () => {
+		var now = new Date().toISOString().split('T')[0];
 		let newDogs = JSON.parse(localStorage.getItem('savedDogs')) || [];
 		if (newDogs.find((dog) => dog.name === this.state.dogName)) {
 			newDogs = newDogs.filter((dog) => dog.name !== this.state.dogName);
-			newDogs = newDogs.concat([{name: this.state.dogName, score: this.state.score}]);
+			newDogs = newDogs.concat([{name: this.state.dogName, score: this.state.score, saved: now}]);
 		}
 		else {
-			newDogs = newDogs.concat([{name: this.state.dogName, score: this.state.score}]);	
+			newDogs = newDogs.concat([{name: this.state.dogName, score: this.state.score, saved: now}]);	
 		}
 		localStorage.setItem('savedDogs', JSON.stringify(newDogs));			
-		
 	}
 
-	
   render() {
 	  
 	if(this.state.loggedIn) {
@@ -198,6 +194,7 @@ class App extends Component {
 						extraPoints={1} />
 				</Sidebar>
 			</div>
+				<SavedDogs />
 			<Footer />
 		 </div>
 		);

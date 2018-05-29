@@ -1,6 +1,12 @@
 body {
 	background-color: #fffaf4;
 } 
+ul {
+	list-style-type: none;
+	line-height: 180%;
+	margin: 0 0 5% 0;
+	padding: 0;
+}
 .formWrapper {
 	width: 35%;
 	margin: 0 auto;
@@ -70,7 +76,7 @@ body {
 .scoreBoard {
 	padding-top: 8%;
 }
-.welcomeMessage {
+.profile {
 	line-height: 165%;
 	text-align: right;
 	padding-top: 8%;
@@ -137,6 +143,20 @@ img {
 	flex: 0 1 auto;
 	max-width: 100px;
 	margin: 0 auto;
+}
+.savedDogs{
+    background-color: white;
+	color: saddlebrown;
+	border: 4px solid #ff9fd6;
+    border-radius: 15px;
+    text-align: center;
+    padding: 3%;
+    min-height: 45vh;    
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
 }
 .footer {
 	background-color: #5c3927;
