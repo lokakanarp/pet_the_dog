@@ -8,7 +8,7 @@ class Login extends Component {
 		}
 	
 	handleChange = (event) => {
-		this.setState({ [event.target.name]: event.target.value });
+		this.setState({[event.target.name]: event.target.value});
 	}
 
 	handleSubmit = (event) => {
@@ -16,7 +16,7 @@ class Login extends Component {
 		if(this.state.dogName.length > 0 && this.state.dogAge.length > 0){
 	  		this.props.handleLogin(this.state.dogName, this.state.dogAge);
 		} else {
-	  		this.setState({ message: "Please enter the dog's name and age." });
+	  		this.setState({message: "Please enter the dog's name and age."});
 		}
 	}
 

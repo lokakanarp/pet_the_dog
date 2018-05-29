@@ -4,7 +4,7 @@ import ClickOrSecond from './words/ClickOrSecond';
 
 
 export default function Item (props) {
-	  if (props.visible) {
+	  if (props.originalPrice < props.price) {
 		  return (
 			  <div className="item" onClick={props.handleClick}>
 				 <div className="sidebarImage">

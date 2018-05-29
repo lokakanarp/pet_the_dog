@@ -21,25 +21,32 @@ class App extends Component {
 	  score: 0,
 	  click: 1,
 	  ballPrice: 20,
-	  ballVisible: false,
 	  foodPrice: 100,
-	  foodVisible: false,
 	  stickPrice: 200,
-	  stickVisible: false ,
 	  treatsPrice: 450,
-	  treatsVisible: false,
 	  bonePrice: 1000,
-	  boneVisible: false
   }
 
 	handleLogin = (dogName, dogAge) => {
     	this.setState({ loggedIn: true, dogName: dogName, dogAge: dogAge });
   	}
 	
+	handleItem = (price, extraClick, priceIncrease) => {
+		if (this.state.score - price >= 0) {
+		this.setState({ 
+			score: this.state.score - price,
+			click: this.state.click + extraClick,
+			price: Math.round(this.state.price * priceIncrease) 
+		   })
+		} else {
+			alert("You need more points to buy this item.")
+		}
+	}
+	
 	handleBall = () => {
 		if (this.state.score - this.state.ballPrice >= 0) {
 		this.setState({ 
-			ballVisible: true,
+			//ballVisible: true,
 			score: this.state.score - this.state.ballPrice,
 			click: this.state.click + 1,
 			ballPrice: Math.round(this.state.ballPrice * 1.1) 
@@ -52,7 +59,7 @@ class App extends Component {
 	handleFood = () => {
 		if (this.state.score - this.state.foodPrice >= 0) {
 		this.setState({ 
-			foodVisible: true,
+			//foodVisible: true,
 			score: this.state.score - this.state.foodPrice,
 			click: this.state.click + 3,
 			foodPrice: Math.round(this.state.foodPrice * 1.5) 
@@ -65,7 +72,7 @@ class App extends Component {
 	handleStick = () => {
 		if (this.state.score - this.state.stickPrice >= 0) {
 		this.setState({ 
-			stickVisible: true,
+			//stickVisible: true,
 			score: this.state.score - this.state.stickPrice,
 			click: this.state.click + 4,
 			stickPrice: Math.round(this.state.stickPrice * 1.8) 
@@ -77,7 +84,7 @@ class App extends Component {
 	handleTreats = () => {
 		if (this.state.score - this.state.treatsPrice >= 0) {
 		this.setState({ 
-			treatsVisible: true,
+			//treatsVisible: true,
 			score: this.state.score - this.state.treatsPrice,
 			click: this.state.click + 5,
 			treatsPrice: Math.round(this.state.treatsPrice * 2) 
@@ -90,7 +97,7 @@ class App extends Component {
 		if (this.state.score - this.state.bonePrice >= 0) {
 		this.handleBoneScore();
 		this.setState({ 
-			boneVisible: true,
+			//boneVisible: true,
 			score: this.state.score - this.state.bonePrice,
 			bonePrice: Math.round(this.state.bonePrice * 2.5) 
 		   })
@@ -152,7 +159,7 @@ class App extends Component {
 					<Item 
 						price={this.state.ballPrice} 
 						handleClick={this.handleBall}
-						visible={this.state.ballVisible}
+						originalPrice={20}
 						caption="Fun ball"
 						src={ball}
 						alt="Ball"
@@ -160,7 +167,7 @@ class App extends Component {
 					<Item 
 						price={this.state.foodPrice} 
 						handleClick={this.handleFood}
-						visible={this.state.foodVisible}
+						originalPrice={100}
 						caption="Yummy food"
 						src={food}
 						alt="Dog food"
@@ -168,7 +175,7 @@ class App extends Component {
 					<Item
 						price={this.state.stickPrice} 
 						handleClick={this.handleStick}
-						visible={this.state.stickVisible}
+						originalPrice={200}
 						caption="Cool stick"
 						src={stick}
 						alt="Stick"
@@ -176,7 +183,7 @@ class App extends Component {
 					<Item
 						price={this.state.treatsPrice} 
 						handleClick={this.handleTreats}
-						visible={this.state.treatsVisible}
+						originalPrice={450}
 						caption="Tasty treats"
 						src={treats}
 						alt="Dog treats"
@@ -184,7 +191,7 @@ class App extends Component {
 					<Item
 						price={this.state.bonePrice} 
 						handleClick={this.handleBone}
-						visible={this.state.boneVisible}
+						originalPrice={1000}
 						caption="Beautiful bone"
 						src={bone}
 						alt="Bone"
