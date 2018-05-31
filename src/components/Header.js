@@ -1,6 +1,7 @@
 import React from 'react';
 import Points from './words/Points';
 import Year from './words/Year';
+import Button from './Button';
 import logo_dog_2 from '../images/logo_dog_2.gif';
 import dog_small from '../images/dog_small.gif';
 
@@ -25,7 +26,8 @@ export default function Header (props) {
 				<h3>Your dog's name is {props.dogName}.<br />
 				Your dog is {props.dogAge} <Year dogAge={props.dogAge}/> old.<br />
 				What a dog!</h3>
-				<button className="saveDogButton" id="saveDogButton" onClick={props.saveDog}>Save dog</button>
+				<Button save={true} saveDog={props.saveDog} /><br />
+				<Button showSavedDogs={true} handleToggle={props.handleToggle}/>
 			</div>
 		</div>
 	);

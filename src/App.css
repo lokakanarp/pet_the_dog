@@ -7,6 +7,13 @@ ul {
 	margin: 0 0 5% 0;
 	padding: 0;
 }
+p {
+	font-size: 1em;
+}
+h1 {
+	margin: 0;
+	padding: 5%;
+}
 .formWrapper {
 	width: 35%;
 	margin: 0 auto;
@@ -79,14 +86,23 @@ ul {
 .profile {
 	line-height: 165%;
 	text-align: right;
-	padding-top: 8%;
 }
-p {
-	font-size: 1em;
+.profileButton {
+	width: 50%;
+    background: #5c3927;
+    height: 45px;
+    border: none;
+	color: white;
+	font-size: 0.8em;
+    border-radius: 5px;
+	margin: 3% 0 1.5% 0;
 }
-h1 {
-	margin: 0;
-	padding: 5%;
+.profileButton.close {
+	width: 20%;
+}
+
+.profileButton:hover {
+	cursor: pointer; 
 }
 .wrapper {
 	display: flex;

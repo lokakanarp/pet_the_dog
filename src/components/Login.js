@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from './Button';
 
 class Login extends Component {
 	state = {
@@ -44,7 +45,7 @@ class Login extends Component {
 						value={this.state.dogAge}
 					/>
 				<p> {this.state.message} </p>
-				<button type="submit" className="submitButton">Let's play!</button>
+				<Button login={true} />
 			</form>
 			);
 		}

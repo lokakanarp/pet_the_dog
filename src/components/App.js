@@ -12,6 +12,7 @@ import food from '../images/food.png';
 import stick from '../images/stick.png';
 import treats from '../images/treats.png';
 
+
 import '../App.css';
 
 class App extends Component {
@@ -126,16 +127,20 @@ class App extends Component {
 	}
 	
 	saveDog = () => {
-		var now = new Date().toISOString().split('T')[0];
+		var todaysDate = new Date().toISOString().split('T')[0];
 		let newDogs = JSON.parse(localStorage.getItem('savedDogs')) || [];
 		if (newDogs.find((dog) => dog.name === this.state.dogName)) {
 			newDogs = newDogs.filter((dog) => dog.name !== this.state.dogName);
-			newDogs = newDogs.concat([{name: this.state.dogName, score: this.state.score, saved: now}]);
+			newDogs = newDogs.concat([{name: this.state.dogName, score: this.state.score, saved: todaysDate}]);
 		}
 		else {
-			newDogs = newDogs.concat([{name: this.state.dogName, score: this.state.score, saved: now}]);	
+			newDogs = newDogs.concat([{name: this.state.dogName, score: this.state.score, saved: todaysDate}]);	
 		}
-		localStorage.setItem('savedDogs', JSON.stringify(newDogs));			
+		localStorage.setItem('savedDogs', JSON.stringify(newDogs));
+		alert('You have saved ' + this.state.dogName)
+	}
+	handleToggle = () => {
+		this.setState({toggle: !this.state.toggle})
 	}
 
   render() {
@@ -148,7 +153,8 @@ class App extends Component {
 				dogAge={this.state.dogAge}
 				score={this.state.score}
 				click={this.state.click}
-				saveDog={this.saveDog} />
+				saveDog={this.saveDog}
+				handleToggle={this.handleToggle}/>
 			<div className="wrapper">
 				<Main handleClick={this.handleClick} />
 				<Sidebar>
@@ -194,7 +200,7 @@ class App extends Component {
 						extraPoints={1} />
 				</Sidebar>
 			</div>
-				<SavedDogs />
+			{this.state.toggle && <SavedDogs handleToggle={this.handleToggle}/>}
 			<Footer />
 		 </div>
 		);
