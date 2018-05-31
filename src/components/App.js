@@ -131,14 +131,22 @@ class App extends Component {
 		let newDogs = JSON.parse(localStorage.getItem('savedDogs')) || [];
 		if (newDogs.find((dog) => dog.name === this.state.dogName)) {
 			newDogs = newDogs.filter((dog) => dog.name !== this.state.dogName);
-			newDogs = newDogs.concat([{name: this.state.dogName, score: this.state.score, saved: todaysDate}]);
+			newDogs = newDogs.concat([{name: this.state.dogName, age: this.state.dogAge, score: this.state.score, saved: todaysDate}]);
 		}
 		else {
-			newDogs = newDogs.concat([{name: this.state.dogName, score: this.state.score, saved: todaysDate}]);	
+			newDogs = newDogs.concat([{name: this.state.dogName, age: this.state.dogAge, score: this.state.score, saved: todaysDate}]);	
 		}
 		localStorage.setItem('savedDogs', JSON.stringify(newDogs));
 		alert('You have saved ' + this.state.dogName)
 	}
+	deleteDog = (dogToDelete) => {
+		let newDogs = JSON.parse(localStorage.getItem('savedDogs'));
+		newDogs = newDogs.filter((dog) => dog.name !== dogToDelete);
+		localStorage.setItem('savedDogs', JSON.stringify(newDogs));
+		this.handleToggle();
+		alert('You deleted ' + dogToDelete);
+	}
+	
 	handleToggle = () => {
 		this.setState({toggle: !this.state.toggle})
 	}
@@ -200,7 +208,7 @@ class App extends Component {
 						extraPoints={1} />
 				</Sidebar>
 			</div>
-			{this.state.toggle && <SavedDogs handleToggle={this.handleToggle}/>}
+			{this.state.toggle && <SavedDogs handleToggle={this.handleToggle} deleteDog={this.deleteDog}/>}
 			<Footer />
 		 </div>
 		);

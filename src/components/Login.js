@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from './Button';
+import InputField from './InputField';
 
 class Login extends Component {
 	state = {
@@ -24,26 +25,22 @@ class Login extends Component {
 	render() {
 		return (
 			<form className="form" onSubmit={this.handleSubmit}>
-					<label htmlFor="dogName">Enter your dog's name:</label><br />
-					<input 
-						className="inputField"
-						type="text"
-						name="dogName"
-						id="dogName"
-						placeholder="For exemple: Caro."
-						onChange={this.handleChange}
+				<label htmlFor="dogName">Enter your dog's name:</label><br />
+				<InputField 
+						id="dogName" 
+						name="dogName" 
+						placeholder="For exemple: Karo."
+						handleChange={this.handleChange}
 						value={this.state.dogName}
-					/>
-					<label htmlFor="dogAge">Enter your dog's age:</label><br />
-					<input 
-						className="inputField"
-						type="text"
-						id="dogAge"
-						name="dogAge"
+				/>
+				<label htmlFor="dogAge">Enter your dog's age:</label><br />
+				<InputField 
+						id="dogAge" 
+						name="dogAge" 
 						placeholder="For exemple: five."
-						onChange={this.handleChange}
+						handleChange={this.handleChange}
 						value={this.state.dogAge}
-					/>
+				/>
 				<p> {this.state.message} </p>
 				<Button login={true} />
 			</form>

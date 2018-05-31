@@ -1,10 +1,12 @@
 import React from 'react';
 import Button from './Button';
 
+
+
 export default function SavedDogs (props) {
 	if(JSON.parse(localStorage.getItem('savedDogs'))){
 		const savedDogs = JSON.parse(localStorage.getItem('savedDogs'));
-		const listItems = savedDogs.map((dog) => <li key={dog.name}>{dog.name}, {dog.score} points. Added: {dog.saved}</li>)
+		const listItems = savedDogs.map((dog) => <li key={dog.name}>{dog.name.toUpperCase()}, {dog.age} y/o, {dog.score} points. Added: {dog.saved}<button className="deleteButton" onClick={() => props.deleteDog(dog.name)}>delete</button></li>)
 
 		return (
 			<div className="savedDogs">
