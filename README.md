@@ -1,8 +1,6 @@
 Loka Kanarp<br>
-[Github repo]
-(https://github.com/lokakanarp/pet_the_dog)<br>
-[Webpage]
-(http://lokakoden.se/pet_the_dog/index.html)
+[Github repo](https://github.com/lokakanarp/pet_the_dog)
+[Webpage](http://lokakoden.se/pet_the_dog/index.html)
 
 
 
