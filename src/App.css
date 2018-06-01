@@ -1,5 +1,5 @@
 body {
-	background-color: #fffaf4;
+	background-color: #fffaf4;	
 } 
 ul {
 	list-style-type: none;
@@ -8,11 +8,24 @@ ul {
 	padding: 0;
 }
 p {
-	font-size: 1em;
+	font-size: 0.8em;
 }
 h1 {
 	margin: 0;
 	padding: 5%;
+}
+h2 {
+	font-size: 1.2em;
+}
+h3 {
+	font-size: 0.9em;
+}
+a {
+	color: white;
+}
+img {
+	max-height: 100%;
+	max-width: 100%;	
 }
 .formWrapper {
 	width: 35%;
@@ -20,7 +33,7 @@ h1 {
 	padding-bottom: 5%;
 }
 .logoLogin {
-	width: 55%;
+	width: 60%;
 	margin: 7% 0 0 3%;
 }
 .logoImgLogin {
@@ -35,16 +48,16 @@ h1 {
 .form {
 	margin: 0px auto;
 	text-align: center;
-	line-height: 330%;
+	line-height: 250%;
 	color: #5c3927;
-	font-size: 1.2em;
+	font-size: 1em;
 	font-weight: 700;
 } 
 .inputField {
 	width: 95%;
 	border-radius: 7px;
 	padding: 3%;
-	font-size: 1em;
+	font-size: 0.8em;
 	box-shadow: none;
 	border: 3px solid #5c3927;
 }
@@ -54,7 +67,7 @@ h1 {
     height: 45px;
     border: none;
 	color: white;
-	font-size: 1em;
+	font-size: 0.8em;
     border-radius: 5px;
 	margin: 3% 0 10% 0;
 }
@@ -62,13 +75,20 @@ h1 {
 	cursor: pointer; 
 }
 .header {
+	display: -webkit-box;  
+    display: -ms-flexbox;  
+    display: -webkit-flex;
 	display: flex;
 	justify-content: space-between;
+	align-items: flex-end;
 	background-color: #fffaf4;
 	padding: 2% 3% 0 3%;
 	color: #5c3927;
 }
 .logoDiv {
+	display: -webkit-box;  
+    display: -ms-flexbox;  
+    display: -webkit-flex;
 	display: flex;
 	flex: 0 1 auto;
 	width: 40%;
@@ -81,10 +101,13 @@ h1 {
 	padding: 5% 0 7% 4%;
 }
 .scoreBoard {
-	padding-top: 8%;
+	flex: 0 1 auto;
+	text-align: center;
+	
 }
 .profile {
-	line-height: 165%;
+	flex: 0 1 auto;
+	line-height: 130%;
 	text-align: right;
 }
 .profileButton {
@@ -93,7 +116,7 @@ h1 {
     height: 45px;
     border: none;
 	color: white;
-	font-size: 0.8em;
+	font-size: 0.65em;
     border-radius: 5px;
 	margin: 3% 0 1.5% 0;
 }
@@ -105,10 +128,16 @@ h1 {
 	cursor: pointer; 
 }
 .wrapper {
+	display: -webkit-box;  
+    display: -ms-flexbox;  
+    display: -webkit-flex;
 	display: flex;
 	justify-content: space-between;
 }
 .main {
+	display: -webkit-box;  
+    display: -ms-flexbox;  
+    display: -webkit-flex;
 	display: flex;
 	flex: 0 1 auto;
 	background-color: #c8e8bb;
@@ -119,18 +148,18 @@ h1 {
 	box-sizing: border-box;
 }
 .image {
-	height: 600px;
+	width: 35vw;
 	margin: 0 auto;
 	padding: 2% 0 7% 0;
 }
 .image:hover {
 	cursor: grab;
 }
-img {
-	max-height: 100%;
-	max-width: 100%;	
-}
+
 .sidebar {
+	display: -webkit-box;  
+    display: -ms-flexbox;  
+    display: -webkit-flex;
 	display: flex;
 	flex-direction: column;
 	flex: 0 1 auto;
@@ -149,7 +178,7 @@ img {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	color: saddlebrown;
+	color: #5c3927;
 }
 .item:hover {
 	cursor: pointer;
@@ -162,7 +191,7 @@ img {
 }
 .savedDogs {
     background-color: white;
-	color: saddlebrown;
+	color: #5c3927;
 	border: 4px solid #ff9fd6;
     border-radius: 15px;
     text-align: center;
@@ -188,6 +217,7 @@ img {
 	background-color: #5c3927;
 	margin: 0;
 	padding: 2% 3% 2% 3%;
+	line-height: 150%;
 }
 .footer p {
 	color: #fffaf4;
