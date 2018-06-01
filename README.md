@@ -1,3 +1,12 @@
+Loka Kanarp<br>
+[Github repo]
+(https://github.com/lokakanarp/pet_the_dog)<br>
+[Webpage]
+(http://lokakoden.se/pet_the_dog/index.html)
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
