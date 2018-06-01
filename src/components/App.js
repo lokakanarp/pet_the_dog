@@ -5,14 +5,13 @@ import Main from './Main';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
 import SavedDogs from './SavedDogs';
+import AlertMessage from './AlertMessage';
 import Item from './Item';
 import ball from '../images/ball.png';
 import bone from '../images/bone1.png';
 import food from '../images/food.png';
 import stick from '../images/stick.png';
 import treats from '../images/treats.png';
-
-
 import '../App.css';
 
 class App extends Component {
@@ -28,25 +27,13 @@ class App extends Component {
 	  stickPrice: 200,
 	  treatsPrice: 450,
 	  bonePrice: 1000,
+	  alert: false,
+	  message: ''
   }
-
 
 	handleLogin = (dogName, dogAge) => {
     	this.setState({ loggedIn: true, dogName: dogName, dogAge: dogAge });
   	}
-	
-	handleItem = (price, extraClick, priceIncrease) => {
-		if (this.state.score - price >= 0) {
-		this.setState({ 
-			score: this.state.score - price,
-			click: this.state.click + extraClick,
-			price: Math.round(this.state.price * priceIncrease) 
-		   })
-		} else {
-			alert("You need more points to buy this item.")
-		}
-	}
-	
 	handleBall = () => {
 		if (this.state.score - this.state.ballPrice >= 0) {
 		this.setState({ 
@@ -55,10 +42,9 @@ class App extends Component {
 			ballPrice: Math.round(this.state.ballPrice * 1.1) 
 		   })
 		} else {
-			alert("You need more points to buy this item.")
+			this.setState({alert: true, message: "item"});
 		}
 	}
-	
 	handleFood = () => {
 		if (this.state.score - this.state.foodPrice >= 0) {
 		this.setState({ 
@@ -67,10 +53,9 @@ class App extends Component {
 			foodPrice: Math.round(this.state.foodPrice * 1.5) 
 		   })
 		} else {
-			alert("You need more points to buy this item.")
+			this.setState({alert: true, message: "item"});
 		}
 	}
-	
 	handleStick = () => {
 		if (this.state.score - this.state.stickPrice >= 0) {
 		this.setState({ 
@@ -79,7 +64,7 @@ class App extends Component {
 			stickPrice: Math.round(this.state.stickPrice * 1.8) 
 		   })
 		} else {
-			alert("You need more points to buy this item.")
+			this.setState({alert: true, message: "item"});
 		}
 	}
 	handleTreats = () => {
@@ -90,7 +75,7 @@ class App extends Component {
 			treatsPrice: Math.round(this.state.treatsPrice * 2) 
 		   })
 		} else {
-			alert("You need more points to buy this item.")
+			this.setState({alert: true, message: "item"});
 		}
 	}
 	handleBone = () => {
@@ -101,7 +86,7 @@ class App extends Component {
 			bonePrice: Math.round(this.state.bonePrice * 2.5) 
 		   })
 		} else {
-			alert("You need more points to buy this item.")
+			this.setState({alert: true, message: "item"});
 		}
 	}
 	handleBoneScore = () => {
@@ -112,20 +97,17 @@ class App extends Component {
 		  1000
 		);
 	}
-	
 	handleClick = () => {
 		this.setState({ score: this.state.score + this.state.click });
 		this.bonusPoints();
 	}
-	
 	bonusPoints = () => {
 		if (this.state.score === 120 || this.state.score === 500 ||
 		   this.state.score === 800) {
-		alert("Your dog loves you so much it decided to give you 30 extra points!")
+		this.setState({alert: true, message: "points"});
 		this.setState({score: this.state.score + 30});
 		}
 	}
-	
 	saveDog = () => {
 		var todaysDate = new Date().toISOString().split('T')[0];
 		let newDogs = JSON.parse(localStorage.getItem('savedDogs')) || [];
@@ -137,19 +119,22 @@ class App extends Component {
 			newDogs = newDogs.concat([{name: this.state.dogName, age: this.state.dogAge, score: this.state.score, saved: todaysDate}]);	
 		}
 		localStorage.setItem('savedDogs', JSON.stringify(newDogs));
-		alert('You have saved ' + this.state.dogName)
+		this.setState({alert: true, message: "save"});
 	}
 	deleteDog = (dogToDelete) => {
 		let newDogs = JSON.parse(localStorage.getItem('savedDogs'));
 		newDogs = newDogs.filter((dog) => dog.name !== dogToDelete);
 		localStorage.setItem('savedDogs', JSON.stringify(newDogs));
 		this.handleToggle();
-		alert('You deleted ' + dogToDelete);
+		this.setState({alert: true, message: "delete"});
 	}
-	
 	handleToggle = () => {
 		this.setState({toggle: !this.state.toggle})
 	}
+	closeAlert = () => {
+		this.setState({alert: false, message: ''});
+	}
+	
 
   render() {
 	  
@@ -209,6 +194,7 @@ class App extends Component {
 				</Sidebar>
 			</div>
 			{this.state.toggle && <SavedDogs handleToggle={this.handleToggle} deleteDog={this.deleteDog}/>}
+			{this.state.alert && <AlertMessage message={this.state.message} closeAlert={this.closeAlert} />}
 			<Footer />
 		 </div>
 		);

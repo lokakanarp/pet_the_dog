@@ -10,5 +10,9 @@ export default function Button(props){
 	if (props.close) {
 		return (<button onClick={props.handleToggle} className="profileButton close">Close</button>)
 	  }
+	if (props.closeAlertWindow) {
+		return (<button className="profileButton close" onClick={props.closeAlert}>Close</button>)
+	  }
+	
   	return (<button id="saveDogButton" onClick={props.saveDog} className="profileButton">Save dog</button>)
 }

@@ -95,13 +95,16 @@ li {
 	display: flex;
 	flex: 0 1 auto;
 	width: 40%;
+	justify-content: space-between;
 }
 .logo {
 	flex: 0 1 auto;
-	max-width: 57%;
+	width: 57%;
 }
 .logoImg {
-	padding: 5% 0 7% 4%;
+	flex: 0 1 auto;
+	width: 40%;
+	padding: 5% 0 7% 0;
 }
 .scoreBoard {
 	flex: 0 1 auto;
@@ -199,7 +202,21 @@ li {
     border-radius: 15px;
     text-align: center;
     padding: 3%;
-    min-height: 45vh;    
+    min-height: 35vh;    
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+}
+.alertMessage {
+    background-color: white;
+	color: #5c3927;
+	border: 4px solid #5c3927;
+    border-radius: 15px;
+    text-align: center;
+    padding: 3%;
+    min-height: 15vh;    
     position: fixed;
     top: 50%;
     left: 50%;
