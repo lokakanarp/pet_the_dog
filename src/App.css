@@ -31,7 +31,7 @@ li {
 	font-size: 0.75em;
 }
 .formWrapper {
-	width: 35%;
+	width: 70%;
 	margin: 0 auto;
 	padding-bottom: 5%;
 }
@@ -79,23 +79,18 @@ li {
 }
 .header {
 	display: -webkit-box;  
-    display: -ms-flexbox;  
-    display: -webkit-flex;
+	display: -ms-flexbox;  
+	display: -webkit-flex;
 	display: flex;
+	flex-direction: column-reverse;
 	justify-content: space-between;
-	align-items: flex-end;
 	background-color: #fffaf4;
-	padding: 2% 3% 0 3%;
+	padding: 5% 5% 0 5%;
 	color: #5c3927;
 }
 .logoDiv {
-	display: -webkit-box;  
-    display: -ms-flexbox;  
-    display: -webkit-flex;
-	display: flex;
+	display: none;
 	flex: 0 1 auto;
-	width: 40%;
-	justify-content: space-between;
 }
 .logo {
 	flex: 0 1 auto;
@@ -126,14 +121,14 @@ li {
 	text-align: right;
 }
 .profileButton {
-	width: 50%;
+	width: 30%;
     background: #5c3927;
     height: 40px;
     border: none;
 	color: white;
 	font-size: 0.7em;
     border-radius: 5px;
-	margin: 3% 0 1.5% 0;
+	margin: 0 0 1.5% 0;
 }
 .profileButton.close {
 	width: 20%;
@@ -147,6 +142,7 @@ li {
     display: -ms-flexbox;  
     display: -webkit-flex;
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
 }
 .main {
@@ -156,15 +152,15 @@ li {
 	display: flex;
 	flex: 0 1 auto;
 	background-color: #c8e8bb;
-	width: 83%;
+	width: 95%;
 	justify-content: center;
 	border-radius: 15px;
 	margin: 2% 2% 2% 3%;
-	padding-bottom: 4%;
+	padding-bottom: 15%;
 	box-sizing: border-box;
 }
 .image {
-	width: 35vw;
+	width: 65vw;
 	position: relative;
 	animation-name: dogAnimation;
     animation-duration: 1.5s;
@@ -179,23 +175,25 @@ li {
     display: -ms-flexbox;  
     display: -webkit-flex;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
+	flex-wrap: wrap;
 	flex: 0 1 auto;
 	background-color: #fffaf4;
-	width: 17%;
+	width: 95%;
 	text-align: center;
-	justify-content: space-between;
+	justify-content: space-around;
 	border: 4px solid #ff9fd6;
 	padding: 2% 0 2% 0;
 	border-radius: 15px;
 	box-sizing: border-box;
-	margin: 2% 2% 2% 0%;
+	margin: 2% auto 2% auto;
 }
 .item {
 	flex: 0 1 auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	width: 50%;
 	color: #5c3927;
 }
 .item:hover {
@@ -213,13 +211,13 @@ li {
 	border: 4px solid #ff9fd6;
     border-radius: 15px;
     text-align: center;
-    padding: 3%;
+    padding: 5%;
     min-height: 35vh;    
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 40%;
+    width: 80%;
 }
 .alertMessage {
     background-color: white;
@@ -233,7 +231,7 @@ li {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 40%;
+    width: 80%;
 }
 .deleteButton {
 	width: 50px;
@@ -259,5 +257,262 @@ li {
     50%  {top:0px;}
     100% {top:15px;}
 }
+
+@media screen and (min-width: 768px) {
+	.formWrapper {
+		width: 35%;
+		margin: 10% auto 0 auto;
+		padding-bottom: 5%;
+	}
+	.header {
+		display: -webkit-box;  
+		display: -ms-flexbox;  
+		display: -webkit-flex;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-end;
+		background-color: #fffaf4;
+		padding: 5% 3% 5% 3%;
+		color: #5c3927;
+	}
+	.logoDiv {
+		display: -webkit-box;  
+		display: -ms-flexbox;  
+		display: -webkit-flex;
+		display: flex;
+		flex: 0 1 auto;
+		width: 40%;
+		justify-content: space-between;
+	}
+	.profileButton {
+		width: 50%;
+		background: #5c3927;
+		height: 40px;
+		border: none;
+		color: white;
+		font-size: 0.7em;
+		border-radius: 5px;
+		margin: 3% 0 1.5% 0;
+	}
+	.wrapper {
+		display: -webkit-box;  
+		display: -ms-flexbox;  
+		display: -webkit-flex;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-content: space-around;
+	}
+	.main {
+		display: -webkit-box;  
+		display: -ms-flexbox;  
+		display: -webkit-flex;
+		display: flex;
+		flex: 0 1 auto;
+		background-color: #c8e8bb;
+		width: 95%;
+		justify-content: center;
+		border-radius: 15px;
+		//margin: 2% 2% 2% 2%;
+		padding-bottom: 10%;
+		box-sizing: border-box;
+	}
+	.image {
+		width: 45vw;
+		position: relative;
+		animation-name: dogAnimation;
+		animation-duration: 1.5s;
+		animation-iteration-count: infinite;
+	}
+	.image:hover {
+		cursor: grab;
+	}
+	.sidebar {
+		display: -webkit-box;  
+		display: -ms-flexbox;  
+		display: -webkit-flex;
+		display: flex;
+		flex-direction: row;
+		flex: 0 1 auto;
+		background-color: #fffaf4;
+		width: 95%;
+		text-align: center;
+		justify-content: space-between;
+		border: 4px solid #ff9fd6;
+		padding: 3% 2% 2% 2%;
+		border-radius: 15px;
+		box-sizing: border-box;
+		margin: 2% auto 7% auto;
+	}
+	.item {
+		flex: 0 1 auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		color: #5c3927;
+		width: 20%;
+	}
+	.item:hover {
+		cursor: pointer;
+	}
+	.sidebarImage {
+		width: 60%;
+		flex: 0 1 auto;
+		margin: 0 auto;
+	}
+	.savedDogs {
+		background-color: white;
+		color: #5c3927;
+		border: 4px solid #ff9fd6;
+		border-radius: 15px;
+		text-align: center;
+		padding: 3%;
+		min-height: 35vh;    
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 40%;
+	}
+	.alertMessage {
+		background-color: white;
+		color: #5c3927;
+		border: 4px solid #5c3927;
+		border-radius: 15px;
+		text-align: center;
+		padding: 3%;
+		min-height: 15vh;    
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 40%;
+	}
+	.footer {
+		background-color: #5c3927;
+		margin: 0;
+		padding: 2% 3% 10% 3%;
+		line-height: 150%;
+	}
+}
+@media screen and (min-width: 1025px) {
+	.formWrapper {
+		width: 35%;
+		margin: 0 auto;
+		padding-bottom: 5%;
+	}
+	.header {
+		display: -webkit-box;  
+		display: -ms-flexbox;  
+		display: -webkit-flex;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		background-color: #fffaf4;
+		padding: 2% 3% 0 3%;
+		color: #5c3927;
+	}
+	.wrapper {
+		display: -webkit-box;  
+		display: -ms-flexbox;  
+		display: -webkit-flex;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.main {
+		display: -webkit-box;  
+		display: -ms-flexbox;  
+		display: -webkit-flex;
+		display: flex;
+		flex: 0 1 auto;
+		background-color: #c8e8bb;
+		width: 83%;
+		justify-content: center;
+		border-radius: 15px;
+		margin: 2% 2% 2% 3%;
+		padding-bottom: 4%;
+		box-sizing: border-box;
+	}
+	.image {
+		width: 35vw;
+		position: relative;
+		animation-name: dogAnimation;
+		animation-duration: 1.5s;
+		animation-iteration-count: infinite;
+	}
+	.image:hover {
+		cursor: grab;
+	}
+	.sidebar {
+		display: -webkit-box;  
+		display: -ms-flexbox;  
+		display: -webkit-flex;
+		display: flex;
+		flex-direction: column;
+		flex: 0 1 auto;
+		background-color: #fffaf4;
+		width: 17%;
+		text-align: center;
+		justify-content: space-between;
+		border: 4px solid #ff9fd6;
+		padding: 2% 0 2% 0;
+		border-radius: 15px;
+		box-sizing: border-box;
+		margin: 2% 2% 2% 0%;
+	}
+	.item {
+		flex: 0 1 auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		color: #5c3927;
+		width: 100%;
+	}
+	.item:hover {
+		cursor: pointer;
+	}
+	.sidebarImage {
+		width: 40%;
+		flex: 0 1 auto;
+		max-width: 100px;
+		margin: 0 auto;
+	}
+	.savedDogs {
+		background-color: white;
+		color: #5c3927;
+		border: 4px solid #ff9fd6;
+		border-radius: 15px;
+		text-align: center;
+		padding: 3%;
+		min-height: 35vh;    
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 40%;
+	}
+	.alertMessage {
+		background-color: white;
+		color: #5c3927;
+		border: 4px solid #5c3927;
+		border-radius: 15px;
+		text-align: center;
+		padding: 3%;
+		min-height: 15vh;    
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 40%;
+	}
+	.footer {
+		background-color: #5c3927;
+		margin: 0;
+		padding: 2% 3% 2% 3%;
+		line-height: 150%;
+	}
+  }
 
 
