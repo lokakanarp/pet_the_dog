@@ -106,6 +106,15 @@ li {
 	width: 40%;
 	padding: 5% 0 7% 0;
 }
+.logoImg:hover {
+    -ms-transform: rotate(360deg); 
+    -webkit-transform: rotate(360deg); 
+    transform: rotate(360deg);
+	-webkit-transition-duration: 1s;
+	-moz-transition-duration: 1s;
+	-o-transition-duration: 1s;
+	transition-duration: 1s;
+}
 .scoreBoard {
 	flex: 0 1 auto;
 	text-align: center;
@@ -151,12 +160,15 @@ li {
 	justify-content: center;
 	border-radius: 15px;
 	margin: 2% 2% 2% 3%;
+	padding-bottom: 4%;
 	box-sizing: border-box;
 }
 .image {
 	width: 35vw;
-	margin: 0 auto;
-	padding: 2% 0 7% 0;
+	position: relative;
+	animation-name: dogAnimation;
+    animation-duration: 1.5s;
+	animation-iteration-count: infinite;
 }
 .image:hover {
 	cursor: grab;
@@ -240,6 +252,12 @@ li {
 }
 .footer p {
 	color: #fffaf4;
+}
+
+@keyframes dogAnimation {
+    0%   {top:15px;}
+    50%  {top:0px;}
+    100% {top:15px;}
 }
 
 
